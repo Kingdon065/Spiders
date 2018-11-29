@@ -1,11 +1,14 @@
 #! python3
+# _*_ coding: utf-8 _*_
 
-import requests
+
+import requests, sys
 import argparse
 from prettytable import PrettyTable
 from urllib.parse import urlencode
 from stations import stations
 from stations2 import stations2
+from color import Colored
 
 
 class Tickets:
@@ -14,52 +17,72 @@ class Tickets:
         self.data = None
         fields = '车次 车站 时间 历时 特等 一等 二等 高级软卧 软卧 动卧 硬卧 软座 硬座 无座'.split()
         self.table = PrettyTable(fields)
+        self.color = Colored()
 
     def get_data(self):
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'
         }
         base_url = 'https://kyfw.12306.cn/otn/leftTicket/query?'
-        params = {
-            'leftTicketDTO.train_date': self.args.info[2],
-            'leftTicketDTO.from_station': stations[self.args.info[0]],
-            'leftTicketDTO.to_station': stations[self.args.info[1]],
-            'purpose_codes': 'ADULT'
-        }
-        url = base_url + urlencode(params)
+        try:
+            params = {
+                'leftTicketDTO.train_date': self.args.info[2],
+                'leftTicketDTO.from_station': stations[self.args.info[0]],
+                'leftTicketDTO.to_station': stations[self.args.info[1]],
+                'purpose_codes': 'ADULT'
+            }
+            url = base_url + urlencode(params)
 
-        response = requests.get(url, headers=headers)
-        response.encoding = 'utf-8'
-        self.data = response.json()
+            response = requests.get(url, headers=headers)
+            response.encoding = 'utf-8'
+            self.data = response.json()
+        except Exception as exc:
+            print(f'Error: {exc}')
+            sys.exit()
 
     def insert_data(self, row):
-        self.table.add_row([row[3], stations2[row[6]], row[8], row[10], row[32], row[31], row[30],
+        # 字体着色
+        train_code = self.color.yellow(row[3])
+        from_station = self.color.green(stations2[row[6]])
+        start_time = self.color.green(row[8])
+        self.table.add_row([train_code, from_station, start_time, row[10], row[32], row[31], row[30],
                        row[21], row[23], row[33], row[28], row[24], row[29], row[26]])
         temp = [''] * 14
-        temp[1] = stations2[row[7]]
-        temp[2] = row[9]
+        temp[1] = self.color.red(stations2[row[7]])
+        temp[2] = self.color.red(row[9])
         self.table.add_row(temp)
 
     def show(self):
+        flag = False
         for result in self.data['data']['result']:
             row = result.split('|')
             for i in range(len(row)):
                 if row[i] == '':
                     row[i] = '-'
+                if row[i] == '有':
+                    row[i] = self.color.green(row[i])
 
             if self.args.is_gao:
+                flag = True
                 if row[3][0] == 'G':
                     self.insert_data(row)
-            elif self.args.is_dong:
+            if self.args.is_dong:
+                flag = True
                 if row[3][0] == 'D':
                     self.insert_data(row)
-            elif self.args.is_tekuai:
+            if self.args.is_tekuai:
+                flag = True
                 if row[3][0] == 'T':
                     self.insert_data(row)
-            elif self.args.is_kuai:
+            if self.args.is_kuai:
+                flag = True
                 if row[3][0] == 'K':
                     self.insert_data(row)
-            else:
+            if self.args.is_zhida:
+                flag = True
+                if row[3][0] == 'Z':
+                    self.insert_data(row)
+            if not flag:
                 self.insert_data(row)
 
         self.table.align['车次'] = 'l'
@@ -77,7 +100,7 @@ def run():
         '-i',
         '--info',
         nargs=3,
-        required=True,
+        metavar=('from', 'to', 'date'),     # 分别指定3个参数的显示名称
         help='输入起始站点(如北京)，到达站点(如上海)，时间(格式: 2018-01-01)'
     )
     parse.add_argument(
@@ -85,28 +108,42 @@ def run():
         action='store_true',
         dest='is_gao',
         default=False,
-        help='只查询高铁'
+        help='高铁'
     )
     parse.add_argument(
         '-D',
         action='store_true',
         dest='is_dong',
         default=False,
-        help='只查询动车'
+        help='动车'
     )
     parse.add_argument(
         '-T',
         action='store_true',
         dest='is_tekuai',
         default=False,
-        help='只查询特快列车'
+        help='特快列车'
     )
     parse.add_argument(
         '-K',
         action='store_true',
         dest='is_kuai',
         default=False,
-        help='只查询快速列车'
+        help='快速列车'
+    )
+    parse.add_argument(
+        '-Z',
+        action='store_true',
+        dest='is_zhida',
+        default=False,
+        help='直达列车'
+    )
+    parse.add_argument(
+        '-v',
+        '--version',
+        action='version',
+        version='%(prog)s 1.0.0',
+        help='显示版本信息'
     )
     args = parse.parse_args()
 

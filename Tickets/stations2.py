@@ -1,3 +1,6 @@
+#! python3
+# _*_ coding: utf-8 _*_
+
 stations2 = {
     'AAP': '百里峡',
     'AAX': '昂昂溪',

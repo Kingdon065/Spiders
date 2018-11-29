@@ -1,3 +1,6 @@
+#! python3
+# _*_ coding: utf-8 _*_
+
 stations = {
     '一间堡': 'YJT',
     '一面坡': 'YPB',
