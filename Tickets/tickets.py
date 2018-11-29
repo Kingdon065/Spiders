@@ -1,7 +1,7 @@
 #! python3
 # _*_ coding: utf-8 _*_
 
-
+import json
 import requests, sys
 import argparse
 from prettytable import PrettyTable
@@ -36,8 +36,15 @@ class Tickets:
             response = requests.get(url, headers=headers)
             response.encoding = 'utf-8'
             self.data = response.json()
-        except Exception as exc:
-            print(f'Error: {exc}')
+        except json.decoder.JSONDecodeError:
+            error = self.color.red('Error:')
+            text = self.color.yellow('输入日期错误或不在正常售票时间范围之内(一般为即日起30天内)!')
+            print(f'{error} {text}')
+            sys.exit()
+        except KeyError:
+            error = self.color.red('Error:')
+            text = self.color.yellow('输入站点不正确!')
+            print(f'{error} {text}')
             sys.exit()
 
     def insert_data(self, row):
@@ -45,6 +52,7 @@ class Tickets:
         train_code = self.color.yellow(row[3])              # 车次
         from_station = self.color.green(stations2[row[6]])  # 出发站
         start_time = self.color.green(row[8])               # 出发时间
+
         lasted = row[10]            # 历时
         principal_seat = row[32]    # 特等座
         first_class_seat = row[31]  # 一等座
