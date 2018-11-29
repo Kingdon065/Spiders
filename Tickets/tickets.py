@@ -42,15 +42,28 @@ class Tickets:
 
     def insert_data(self, row):
         # 字体着色
-        train_code = self.color.yellow(row[3])
-        from_station = self.color.green(stations2[row[6]])
-        start_time = self.color.green(row[8])
-        self.table.add_row([train_code, from_station, start_time, row[10], row[32], row[31], row[30],
-                       row[21], row[23], row[33], row[28], row[24], row[29], row[26]])
-        temp = [''] * 14
-        temp[1] = self.color.red(stations2[row[7]])
-        temp[2] = self.color.red(row[9])
-        self.table.add_row(temp)
+        train_code = self.color.yellow(row[3])              # 车次
+        from_station = self.color.green(stations2[row[6]])  # 出发站
+        start_time = self.color.green(row[8])               # 出发时间
+        lasted = row[10]            # 历时
+        principal_seat = row[32]    # 特等座
+        first_class_seat = row[31]  # 一等座
+        second_class_seat = row[30] # 二等座
+        premium_soft = row[21]      # 高级软卧
+        soft_sleep = row[23]        # 软卧
+        move_sleep = row[33]        # 动卧
+        hard_sleep = row[28]        # 硬卧
+        soft_seat = row[24]         # 软座
+        hard_seat = row[29]         # 硬座
+        no_seat = row[26]           # 无座
+
+        self.table.add_row([train_code, from_station, start_time, lasted, principal_seat,
+                            first_class_seat, second_class_seat, premium_soft, soft_sleep,
+                            move_sleep, hard_sleep, soft_seat, hard_seat, no_seat])
+        next_line = [''] * 14
+        next_line[1] = self.color.red(stations2[row[7]])     # 到达站
+        next_line[2] = self.color.red(row[9])                # 到达时间
+        self.table.add_row(next_line)
 
     def show(self):
         flag = False
