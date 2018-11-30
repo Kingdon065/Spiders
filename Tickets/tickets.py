@@ -6,9 +6,9 @@ import requests, sys
 import argparse
 from prettytable import PrettyTable
 from urllib.parse import urlencode
-from stations import stations
-from stations2 import stations2
-from color import Colored
+from Stations.stations import stations
+from Stations.stations2 import stations2
+from Color.color import Colored
 
 
 class Tickets:
