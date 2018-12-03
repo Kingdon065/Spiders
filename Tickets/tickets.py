@@ -126,6 +126,7 @@ def run():
         '-i',
         '--info',
         nargs=3,
+        required=True,
         metavar=('from', 'to', 'date'),     # 分别指定3个参数的显示名称
         help='输入起始站点(如北京)，到达站点(如上海)，时间(格式: 2018-01-01)'
     )
@@ -168,7 +169,7 @@ def run():
         '-v',
         '--version',
         action='version',
-        version='%(prog)s 1.0.0',
+        version='%(prog)s 1.0.4',
         help='显示版本信息'
     )
     args = parse.parse_args()
