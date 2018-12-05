@@ -29,12 +29,15 @@ class Tickets:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'
         }
         base_url = 'https://kyfw.12306.cn/otn/leftTicket/query?'
+        purpose_codes = 'ADULT'
+        if self.args.is_student:
+            purpose_codes = '0X00'
         try:
             params = {
                 'leftTicketDTO.train_date': self.args.info[2],
                 'leftTicketDTO.from_station': stations[self.args.info[0]],
                 'leftTicketDTO.to_station': stations[self.args.info[1]],
-                'purpose_codes': 'ADULT'
+                'purpose_codes': purpose_codes
             }
             url = base_url + urlencode(params)
 
@@ -169,8 +172,15 @@ def run():
         '-v',
         '--version',
         action='version',
-        version='%(prog)s 1.0.4',
+        version='%(prog)s: version 1.0.4',
         help='显示版本信息'
+    )
+    parse.add_argument(
+        '--student',
+        action='store_true',
+        dest='is_student',
+        default=False,
+        help='学生票'
     )
     args = parse.parse_args()
 

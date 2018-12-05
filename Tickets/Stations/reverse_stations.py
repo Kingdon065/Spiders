@@ -2,7 +2,7 @@
 # _*_ coding: utf-8 _*_
 
 
-from Stations import stations
+from Stations.stations import stations
 from pprint import pprint
 
 temp = dict(zip(stations.values(), stations.keys()))
