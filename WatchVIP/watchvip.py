@@ -1,7 +1,6 @@
 #! python3
 
 from vip import *
-import time, os
 import argparse
 
 def run():
@@ -15,7 +14,10 @@ def run():
 
     )
     parse.add_argument(
-        'root',
+        '-u',
+        '--url',
+        nargs=1,
+        default=[''],
         metavar='url',
         help='video url'
     )
@@ -46,42 +48,13 @@ def run():
 
     args = parse.parse_args()
 
-    path = 'D:/Tools/watchvip_caches'
-    filename = os.path.join(path, 'url_temp.txt')
-
-    if args.is_list:
-        os.system('cat {}'.format(filename))
-        return
-
-    if args.is_prev:
-        try:
-            f = open(filename, 'r')
-            lines = f.readlines()
-            n = len(lines)
-            while True:
-                args.root = lines[n - 1][23:-1]
-                if args.root[0:4] == 'http':
-                    break
-                else:
-                    n = n -1
-            f.close()
-        except Exception as exc:
-            log.error(exc)
-            return
-
-    # 备份videoUrl
-    os.makedirs(path, exist_ok=True)
-    temp = open(filename, 'a+')
-    localtime = time.strftime('%Y-%m-%d %X', time.localtime(time.time()))
-    temp.write('{} -- {}\n'.format(localtime, args.root))
-    temp.close()
+    if len(sys.argv) == 1:
+        sys.exit()
 
     # 工具网站
     toolUrl = 'http://app.baiyug.cn:2019/vip/?url='
     try:
         v = vipurl(args, toolUrl)
-        v.title()
-        v.get_address()
         v.play()
     except Exception as exc:
         log.error(exc)
