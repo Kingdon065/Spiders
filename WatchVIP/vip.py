@@ -5,7 +5,7 @@ import logging, os
 import bs4, sys
 from selenium import webdriver
 
-logging.disable(logging.CRITICAL)
+#logging.disable(logging.CRITICAL)
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s - %(message)s')
 log = logging.getLogger(__name__)
@@ -33,21 +33,36 @@ class vipurl:
         temp.close()
 
     def previous_url(self):
+        # 使用以前的网址
+        urls = {}
         with open(self.filename, 'r') as f:
             lines = f.readlines()
             n = len(lines)
+            # 最多输出10条历史纪录
+            if n > 10:
+                for i in range(1, 11):
+                    urls[i] = re.search('http.*', lines[-i]).group()
+                    print(f'{i} - {lines[-i]}', end='')
+            else:
+                for i in range(n):
+                    urls[i] = re.search('http.*', lines[i]).group()
+                    print(f'{i} - {lines[i]}', end='')
             while True:
-                self.args.url[0] = re.search('http.*', lines[n-1]).group()
-                if self.args.url[0][0:4] == 'http':
+                num = input('Enter number of url(q to quit): ')
+                if num == 'q':
+                    sys.exit()
+                if int(num) in urls.keys():
+                    self.args.url[0] = urls[int(num)]
                     break
-                n = n -1
+                else:
+                    print(f'[{num}] no exists.')
 
     def open_browser(self):
             # 打开浏览器
             #SERVICE_ARGS = ['--load-images=false']  # 禁止加载图片
             #self.browser = webdriver.Chrome(service_args=SERVICE_ARGS)
             chrome_options = webdriver.ChromeOptions()
-            #chrome_options.add_argument('--ignore-certificate-errors')
+            chrome_options.add_argument('--ignore-certificate-errors')
             chrome_options.add_argument('log-level=3')
             chrome_options.add_argument('user-data-dir=C:/Users/MaSiyuan/AppData/Local/Google/Chrome/User Data')
             self.browser = webdriver.Chrome(chrome_options=chrome_options)
@@ -126,6 +141,7 @@ class vipurl:
                 href = a.get('href')
                 href = self.tool_url + 'https:' + href  # 得到最终网址
                 self.address[num] = href
+            return
 
         for span in self.soup.select("div a span[class*='vip']"):
             div = span.find_parent('div')
