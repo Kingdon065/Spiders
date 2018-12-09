@@ -20,7 +20,7 @@ class Tickets:
     def __init__(self, args):
         self.args = args
         self.data = None
-        fields = '车次 车站 时间 历时 特等 一等 二等 高级软卧 软卧 动卧 硬卧 软座 硬座 无座'.split()
+        fields = '车次 车站 时间 历时 特等 一等 二等 高级软卧 软卧 动卧 硬卧 软座 硬座 无座 备注'.split()
         self.table = PrettyTable(fields)
         self.color = Colored()
 
@@ -72,11 +72,12 @@ class Tickets:
         soft_seat = row[24]         # 软座
         hard_seat = row[29]         # 硬座
         no_seat = row[26]           # 无座
+        note = row[0]               # 备注
 
         self.table.add_row([train_code, from_station, start_time, lasted, principal_seat,
                             first_class_seat, second_class_seat, premium_soft, soft_sleep,
-                            move_sleep, hard_sleep, soft_seat, hard_seat, no_seat])
-        next_line = [''] * 14
+                            move_sleep, hard_sleep, soft_seat, hard_seat, no_seat, note])
+        next_line = [''] * 15
         next_line[1] = self.color.red(stations2[row[7]])     # 到达站
         next_line[2] = self.color.red(row[9])                # 到达时间
         self.table.add_row(next_line)
@@ -85,6 +86,11 @@ class Tickets:
         flag = False
         for result in self.data['data']['result']:
             row = result.split('|')
+            # 秘密字符串存在表示有票，否则没有
+            if row[0] != '':
+                row[0] = '预订'
+                row[0] = self.color.blue(row[0])
+
             for i in range(len(row)):
                 if row[i] == '':
                     row[i] = '-'
@@ -172,7 +178,7 @@ def run():
         '-v',
         '--version',
         action='version',
-        version='%(prog)s: version 1.0.4',
+        version='%(prog)s: version 1.0.6',
         help='显示版本信息'
     )
     parse.add_argument(
