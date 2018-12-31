@@ -28,7 +28,7 @@ class Tickets:
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'
         }
-        base_url = 'https://kyfw.12306.cn/otn/leftTicket/query?'
+        base_url = 'https://kyfw.12306.cn/otn/leftTicket/queryZ?'
         purpose_codes = 'ADULT'
         if self.args.is_student:
             purpose_codes = '0X00'

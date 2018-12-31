@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d54fa72-8cc9-4a30-9466-bbcce4bbe2e6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Tickets/.idea/Tickets.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tickets/.idea/Tickets.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tickets/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tickets/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tickets/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tickets/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ WatchVIP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ WatchVIP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vip.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="594">
+              <caret line="66" column="112" lean-forward="true" selection-start-line="66" selection-start-column="112" selection-end-line="66" selection-end-column="112" />
               <folding>
                 <element signature="e#12#27#0" expanded="true" />
               </folding>
@@ -110,8 +115,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="287" />
-    <option name="y" value="53" />
+    <option name="x" value="693" />
+    <option name="y" value="13" />
     <option name="width" value="1400" />
     <option name="height" value="992" />
   </component>
@@ -121,6 +126,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -132,7 +138,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -232,6 +237,9 @@
       <workItem from="1544088009669" duration="79000" />
       <workItem from="1544114222081" duration="3103000" />
       <workItem from="1544193349822" duration="231000" />
+      <workItem from="1545528228362" duration="535000" />
+      <workItem from="1545528985527" duration="16000" />
+      <workItem from="1545755289264" duration="45000" />
     </task>
     <task id="LOCAL-00001" summary="2.0.0">
       <created>1544041348276</created>
@@ -251,13 +259,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14604000" />
+    <option name="totallyTimeSpent" value="15200000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13680257" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14270386" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -327,8 +335,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vip.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="594">
+          <caret line="66" column="112" lean-forward="true" selection-start-line="66" selection-start-column="112" selection-end-line="66" selection-end-column="112" />
           <folding>
             <element signature="e#12#27#0" expanded="true" />
           </folding>
