@@ -3,6 +3,13 @@
 from vip import *
 import argparse
 
+
+# 默认解析接口
+toolUrl = [
+    'https://660e.com/?url=',
+    'https://jx.618g.com/index.php?url='
+]
+
 def run():
     """
         视频网址
@@ -10,8 +17,7 @@ def run():
     """
     parse = argparse.ArgumentParser(
         prog='watchvip',
-        description='watch vip videos',
-
+        description='watch vip videos'
     )
     parse.add_argument(
         '-u',
@@ -45,16 +51,23 @@ def run():
         default=False,
         help='show used url caches'
     )
+    parse.add_argument(
+        '-T',
+        '--ToolUrl',
+        nargs=1,
+        default=toolUrl,
+        metavar='tool',
+        help='tool url'
+    )
 
     args = parse.parse_args()
 
     if len(sys.argv) == 1:
         sys.exit()
 
-    # 工具网站
-    toolUrl = 'http://app.baiyug.cn:2019/vip/?url='
+
     try:
-        v = vipurl(args, toolUrl)
+        v = vipurl(args)
         v.play()
     except Exception as exc:
         log.error(exc)

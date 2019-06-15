@@ -12,10 +12,9 @@ log = logging.getLogger(__name__)
 
 
 class vipurl:
-    def __init__(self, args, tool_url):
+    def __init__(self, args):
         # log.info('video url: ' + url)
         self.args = args
-        self.tool_url = tool_url
         self.address = {}
         self.path = 'D:/Tools/watchvip_caches'
         self.filename = os.path.join(self.path, 'url_temp.txt')
@@ -78,11 +77,13 @@ class vipurl:
     def get_title(self):
         i = 0
         while True:
+            if i >= len(self.soup.title.text):
+                break
             if self.soup.title.text[i] == '第':    # for qq
                 break
             if self.soup.title.text[i] == '_':    # for iqiyi
                 break
-            if i >= len(self.soup.title.text):
+            if self.soup.title.text[i] == ' ':    # for youku
                 break
             self.title += self.soup.title.text[i]
             i += 1
@@ -97,7 +98,7 @@ class vipurl:
                     continue
                 num = a.text.strip()[0:2]
                 href = a.get('href')
-                href = self.tool_url + 'https://v.qq.com' + href  # 得到最终网址
+                href = self.args.tool[0] + 'https://v.qq.com' + href  # 得到最终网址
                 self.address[num] = href
             return
 
@@ -105,7 +106,7 @@ class vipurl:
             span = img.find_parent('span')  # 返回img标签的父标签span
             num = span.find(name='a').text.strip()[0:2]  # 获得a标签的文本，即集数
             href = span.find(name='a').get('href')  # 再查找span标签下a标签，并获得属性href
-            href = self.tool_url + 'https://v.qq.com' + href  # 得到最终网址
+            href = self.args.tool[0] + 'https://v.qq.com' + href  # 得到最终网址
             self.address[num] = href
 
     def __iqiyiVip(self):
@@ -120,7 +121,7 @@ class vipurl:
                 href = a.get('href')
                 if href.startswith('java'):
                     continue
-                href = self.tool_url + href  # 得到最终网址
+                href = self.args.tool[0] + href  # 得到最终网址
                 self.address[num] = href
             return
 
@@ -130,7 +131,7 @@ class vipurl:
             if len(num) > 2:
                 continue
             href = li.find('a').get('href')
-            href = self.tool_url + href
+            href = self.args.tool[0] + href
             self.address[num] = href
 
     def __youkuVip(self):
@@ -139,7 +140,7 @@ class vipurl:
             for a in self.soup.select("div a"):
                 num = a.text.strip()[0:2]
                 href = a.get('href')
-                href = self.tool_url + 'https:' + href  # 得到最终网址
+                href = self.args.ToolUrl[0] + 'https:' + href  # 得到最终网址
                 self.address[num] = href
             return
 
@@ -148,7 +149,7 @@ class vipurl:
             num = div.text.strip()[0:2]
             a = div.find(name='a')
             href = a.get('href')
-            href = self.tool_url + 'https:' + href
+            href = self.args.ToolUrl[0] + 'https:' + href
             self.address[num] = href
 
     def __sohuVip(self):
@@ -158,7 +159,7 @@ class vipurl:
             num = li.text.strip()
             a = li.find(name='a')
             href = a.get('href')
-            href = self.tool_url + 'https:' + href
+            href = self.args.ToolUrl[0] + 'https:' + href
             self.address[num] = href
 
     def get_address(self):

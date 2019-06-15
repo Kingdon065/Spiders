@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb98a89e-a108-4ddd-8b38-b86aa0dba9cd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Tickets.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Tickets.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WatchVIP/.idea/ WatchVIP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../WatchVIP/.idea/ WatchVIP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WatchVIP/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WatchVIP/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WatchVIP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WatchVIP/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cb98a89e-a108-4ddd-8b38-b86aa0dba9cd" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tickets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="43" column="57" lean-forward="true" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
+            <state relative-caret-position="616">
+              <caret line="46" column="44" lean-forward="true" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
               <folding>
                 <element signature="e#102#113#0" expanded="true" />
               </folding>
@@ -262,7 +254,7 @@
       <workItem from="1544344876538" duration="3100000" />
       <workItem from="1544424764211" duration="41000" />
       <workItem from="1544638573523" duration="104000" />
-      <workItem from="1546258151504" duration="376000" />
+      <workItem from="1546258151504" duration="829000" />
     </task>
     <task id="LOCAL-00001" summary="1.0.0">
       <created>1543491826517</created>
@@ -320,11 +312,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544347565857</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="1.0.7">
+      <created>1546258540204</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1546258540204</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48203000" />
+    <option name="totallyTimeSpent" value="48656000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -364,7 +363,8 @@
     <MESSAGE value="1.0.4" />
     <MESSAGE value="1.0.5" />
     <MESSAGE value="1.0.6" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0.6" />
+    <MESSAGE value="1.0.7" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0.7" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Stations/stations2.py">
@@ -427,8 +427,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tickets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="43" column="57" lean-forward="true" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
+        <state relative-caret-position="616">
+          <caret line="46" column="44" lean-forward="true" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
           <folding>
             <element signature="e#102#113#0" expanded="true" />
           </folding>

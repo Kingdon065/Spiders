@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d54fa72-8cc9-4a30-9466-bbcce4bbe2e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Tickets/.idea/Tickets.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tickets/.idea/Tickets.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tickets/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tickets/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tickets/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tickets/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ WatchVIP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ WatchVIP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vip.py" beforeDir="false" afterPath="$PROJECT_DIR$/vip.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watchvip.py" beforeDir="false" afterPath="$PROJECT_DIR$/watchvip.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,15 +15,15 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/WatchVIP$test.coverage" NAME="test Coverage Results" MODIFIED="1544114521017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/WatchVIP$watchvip.coverage" NAME="watchvip Coverage Results" MODIFIED="1544116182568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WatchVIP$watchvip.coverage" NAME="watchvip Coverage Results" MODIFIED="1560566674829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/watchvip.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1342">
-              <caret line="62" selection-start-line="62" selection-end-line="62" />
+            <state relative-caret-position="440">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
                 <element signature="e#12#29#0" expanded="true" />
               </folding>
@@ -33,14 +31,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vip.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="66" column="112" lean-forward="true" selection-start-line="66" selection-start-column="112" selection-end-line="66" selection-end-column="112" />
+            <state relative-caret-position="1368">
+              <caret line="166" column="31" lean-forward="true" selection-start-line="166" selection-start-column="31" selection-end-line="166" selection-end-column="31" />
               <folding>
                 <element signature="e#12#27#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/bs4/element.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23034">
+              <caret line="1052" selection-start-line="1052" selection-end-line="1052" />
             </state>
           </provider>
         </entry>
@@ -77,6 +84,8 @@
       <find>root</find>
       <find>.__</find>
       <find>\</find>
+      <find>tool_url</find>
+      <find>args.tool</find>
     </findStrings>
     <replaceStrings>
       <replace>soup</replace>
@@ -94,6 +103,9 @@
       <replace>url[0]</replace>
       <replace>.</replace>
       <replace>/</replace>
+      <replace>args.tool</replace>
+      <replace>args.tool[0]</replace>
+      <replace>args.ToolUrl</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -108,9 +120,9 @@
         <option value="$PROJECT_DIR$/../Instead/instead.py" />
         <option value="$PROJECT_DIR$/vipaddr.py" />
         <option value="$PROJECT_DIR$/url.txt" />
-        <option value="$PROJECT_DIR$/watchvip.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/vip.py" />
+        <option value="$PROJECT_DIR$/watchvip.py" />
       </list>
     </option>
   </component>
@@ -142,7 +154,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Others_Projects/wtfpython-cn" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -199,7 +211,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/watchvip.py" />
-      <option name="PARAMETERS" value="-p" />
+      <option name="PARAMETERS" value="-u &quot;https://v.youku.com/v_show/id_XNDA0OTA1ODQyNA==.html?spm=a2h0k.11417342.soresults.dselectbutton&amp;s=71efbfbd3fefbfbdefbf&quot;" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -240,6 +252,8 @@
       <workItem from="1545528228362" duration="535000" />
       <workItem from="1545528985527" duration="16000" />
       <workItem from="1545755289264" duration="45000" />
+      <workItem from="1550174227314" duration="1887000" />
+      <workItem from="1560565511175" duration="1682000" />
     </task>
     <task id="LOCAL-00001" summary="2.0.0">
       <created>1544041348276</created>
@@ -259,13 +273,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15200000" />
+    <option name="totallyTimeSpent" value="18769000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14270386" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14645922" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -297,13 +311,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="2.0.1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/bs4/element.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="1293" selection-start-line="1293" selection-end-line="1293" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/path.py" />
     <entry file="file://$PROJECT_DIR$/../Instead/instead.py" />
     <entry file="file://$PROJECT_DIR$/../FindInFiles/FindInFiles.py" />
@@ -316,13 +323,24 @@
     <entry file="file://$PROJECT_DIR$/../Encoding/coding.py" />
     <entry file="file://$PROJECT_DIR$/url.txt" />
     <entry file="file://$PROJECT_DIR$/url_temp.txt" />
-    <entry file="file://$PROJECT_DIR$/watchvip.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/argparse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1342">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="e#12#29#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="161">
+          <caret line="1323" selection-start-line="1323" selection-end-line="1323" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/chrome/options.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/bs4/element.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23034">
+          <caret line="1052" selection-start-line="1052" selection-end-line="1052" />
         </state>
       </provider>
     </entry>
@@ -335,10 +353,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vip.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="66" column="112" lean-forward="true" selection-start-line="66" selection-start-column="112" selection-end-line="66" selection-end-column="112" />
+        <state relative-caret-position="1368">
+          <caret line="166" column="31" lean-forward="true" selection-start-line="166" selection-start-column="31" selection-end-line="166" selection-end-column="31" />
           <folding>
             <element signature="e#12#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/watchvip.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#12#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
