@@ -26,9 +26,17 @@ class Tickets:
 
     def get_data(self):
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'
+            'Cookie': 'JSESSIONID=61BE013404C6E5876764CCEA3D5802DA; BIGipServerotn=233832970.38945.0000; '
+                      'RAIL_EXPIRATION=1571133091680; RAIL_DEVICEID=crHoTF6Fk2AAnY2iTjTiO0kVzwL-0X2AdLabhM_'
+                      'mZl1RHulNMYPF_pFU609Dqs2igvvT-kY_6QyLZE_ugM-OOt3N-vSDI1T8rxz-mNYfv34Vjd2QmCPMm9eYOJUm'
+                      'TThp-yzISmhTVw1eN0Y19eVuTi0FPy3zHdC7; BIGipServerpool_passport=250413578.50215.0000; '
+                      'route=9036359bb8a8a461c164a04f8f50b252; _jc_save_fromStation=%u4E0A%u6D77%2CSHH; '
+                      '_jc_save_toStation=%u5E7F%u5DDE%2CGZQ; _jc_save_fromDate=2019-10-11; '
+                      '_jc_save_toDate=2019-10-11; _jc_save_wfdc_flag=dc',
+            'Host': 'kyfw.12306.cn',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3314.0 Safari/537.36 SE 2.X MetaSr 1.0'
         }
-        base_url = 'https://kyfw.12306.cn/otn/leftTicket/queryZ?'
+        base_url = 'https://kyfw.12306.cn/otn/leftTicket/query?'    # 如果不能连接，可能当时网站使用了queryZ
         purpose_codes = 'ADULT'
         if self.args.is_student:
             purpose_codes = '0X00'
