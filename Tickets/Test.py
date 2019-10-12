@@ -6,10 +6,9 @@
 @Time: 2018/12/1 0:30
 """
 
-from colorama import init, Fore, Back, Style
-init(autoreset=True)
-print(Fore.RED + 'some blue text')
-print(Back.CYAN + 'cyan background')
-print(Style.DIM + 'in dim text')
-print('auto set to normal now')
+from urllib.parse import quote, unquote
+
+s = '昭通'
+print(quote(s))
+print(quote('%u4E0A%u6D77'))
 

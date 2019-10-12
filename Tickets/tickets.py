@@ -97,7 +97,7 @@ class Tickets:
             # 秘密字符串存在表示有票，否则没有
             if row[0] != '':
                 row[0] = '预订'
-                row[0] = self.color.blue(row[0])
+                row[0] = self.color.cyan(row[0])
 
             for i in range(len(row)):
                 if row[i] == '':
